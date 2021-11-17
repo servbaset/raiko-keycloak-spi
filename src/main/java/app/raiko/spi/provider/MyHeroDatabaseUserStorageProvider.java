@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RequiredArgsConstructor
-public class PetovetDatabaseUserStorageProvider
+public class MyHeroDatabaseUserStorageProvider
     implements UserStorageProvider, UserLookupProvider, CredentialInputValidator {
 
   private final KeycloakSession session;

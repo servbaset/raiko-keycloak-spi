@@ -1,7 +1,7 @@
 package app.raiko.spi.factory;
 
 import app.raiko.spi.config.DatabaseConfiguration;
-import app.raiko.spi.provider.PetovetDatabaseUserStorageProvider;
+import app.raiko.spi.provider.MyHeroDatabaseUserStorageProvider;
 import org.keycloak.component.ComponentModel;
 import org.keycloak.component.ComponentValidationException;
 import org.keycloak.models.KeycloakSession;
@@ -15,14 +15,14 @@ import java.util.List;
 
 import static app.raiko.spi.config.DatabaseProperty.*;
 
-public class PetovetDatabaseUserStorageProviderFactory
-    implements UserStorageProviderFactory<PetovetDatabaseUserStorageProvider> {
+public class MyHeroDatabaseUserStorageProviderFactory
+    implements UserStorageProviderFactory<MyHeroDatabaseUserStorageProvider> {
 
-  private static final String ID = "petovet-spi";
+  private static final String ID = "myhero-spi";
 
   protected final List<ProviderConfigProperty> configMetadata;
 
-  public PetovetDatabaseUserStorageProviderFactory() {
+  public MyHeroDatabaseUserStorageProviderFactory() {
     configMetadata =
         ProviderConfigurationBuilder.create()
             .property()
@@ -35,7 +35,7 @@ public class PetovetDatabaseUserStorageProviderFactory
             .property()
             .name(CONFIG_KEY_JDBC_URL)
             .type(ProviderConfigProperty.STRING_TYPE)
-            .defaultValue("jdbc:postgresql://localhost:5432/petovet")
+            .defaultValue("jdbc:postgresql://localhost:5433/myhero")
             .label("DATABASE URL")
             .add()
             .property()
@@ -77,9 +77,9 @@ public class PetovetDatabaseUserStorageProviderFactory
   }
 
   @Override
-  public PetovetDatabaseUserStorageProvider create(KeycloakSession session, ComponentModel model) {
+  public MyHeroDatabaseUserStorageProvider create(KeycloakSession session, ComponentModel model) {
     var userModelService = UserModelServiceFactory.create(model);
-    return new PetovetDatabaseUserStorageProvider(session, model, userModelService);
+    return new MyHeroDatabaseUserStorageProvider(session, model, userModelService);
   }
 
   @Override
