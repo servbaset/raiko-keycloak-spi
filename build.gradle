@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'app.raiko'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 configurations {
     compileOnly {
@@ -22,16 +22,16 @@ dependencies {
 
     implementation 'org.mapstruct:mapstruct:1.4.2.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.20'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi-private', version: '14.0.0'
-    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '14.0.0'
-    implementation group: 'org.keycloak', name: 'keycloak-adapter-spi', version: '14.0.0'
-    implementation group: 'org.keycloak', name: 'keycloak-core', version: '14.0.0'
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi-private', version: '15.0.2'
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '15.0.2'
+    implementation group: 'org.keycloak', name: 'keycloak-adapter-spi', version: '15.0.2'
+    implementation group: 'org.keycloak', name: 'keycloak-core', version: '15.0.2'
     bundleLib group: 'org.postgresql', name: 'postgresql', version: '42.2.22'
     bundleLib group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'
     implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'

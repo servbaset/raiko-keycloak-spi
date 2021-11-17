@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'app.raiko.petovet-spi' is invalid and this project uses 'app.raiko.petovetspi' instead.
+* The original package name 'app.raiko.petovet-spi' is invalid and this project uses 'app.raiko.spi' instead.
 
 # Getting Started
 
