@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group = 'app.raiko'
+version = '0.0.1-SNAPSHOT'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    bundleLib
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi-private', version: '14.0.0'
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '14.0.0'
+    implementation group: 'org.keycloak', name: 'keycloak-adapter-spi', version: '14.0.0'
+    implementation group: 'org.keycloak', name: 'keycloak-core', version: '14.0.0'
+    bundleLib group: 'org.postgresql', name: 'postgresql', version: '42.2.22'
+    bundleLib group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'
+    implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'
+    implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+    bundleLib group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+
+
+}
+
+jar {
+    from {
+        configurations.bundleLib.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
