@@ -1,1 +1,1 @@
-app.raiko.petovetspi.factory.PetovetDatabaseUserStorageProviderFactory
+app.raiko.spi.factory.PetovetDatabaseUserStorageProviderFactory
