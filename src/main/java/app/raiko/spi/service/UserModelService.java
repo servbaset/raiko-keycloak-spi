@@ -14,7 +14,7 @@ import org.keycloak.models.RealmModel;
 @AllArgsConstructor
 public class UserModelService {
 
-  private static final String ADMIN_REALM = "myhero-admin-panel";
+  private static final String ADMIN_REALM = "myhero-admin";
   private static final String USER_REALM = "myhero-user";
 
   private final UserDao userDao;
