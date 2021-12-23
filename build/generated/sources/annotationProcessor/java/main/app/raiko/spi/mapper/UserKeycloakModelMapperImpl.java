@@ -4,6 +4,7 @@ import app.raiko.spi.model.Admin;
 import app.raiko.spi.model.Role;
 import app.raiko.spi.model.User;
 import app.raiko.spi.model.UserKeycloakModel;
+import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.processing.Generated;
 import org.keycloak.component.ComponentModel;
@@ -12,7 +13,7 @@ import org.keycloak.models.RealmModel;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-17T19:26:45+0330",
+    date = "2021-12-23T11:50:52+0330",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.1.1.jar, environment: Java 11.0.11 (AdoptOpenJDK)"
 )
 public class UserKeycloakModelMapperImpl implements UserKeycloakModelMapper {
@@ -23,15 +24,26 @@ public class UserKeycloakModelMapperImpl implements UserKeycloakModelMapper {
             return null;
         }
 
-        KeycloakSession session = null;
-        RealmModel realm = null;
-        ComponentModel storageProviderModel = null;
-        String username = null;
-        String password = null;
-        boolean enabled = false;
         String firstName = null;
         String lastName = null;
+        boolean enabled = false;
+        String username = null;
+        String password = null;
         Set<Role> roles = null;
+
+        firstName = admin.getFirstName();
+        lastName = admin.getLastName();
+        enabled = admin.isEnabled();
+        username = admin.getUsername();
+        password = admin.getPassword();
+        Set<Role> set = admin.getRoles();
+        if ( set != null ) {
+            roles = new HashSet<Role>( set );
+        }
+
+        ComponentModel storageProviderModel = null;
+        KeycloakSession session = null;
+        RealmModel realm = null;
 
         UserKeycloakModel userKeycloakModel = new UserKeycloakModel( session, realm, storageProviderModel, username, password, enabled, firstName, lastName, roles );
 
@@ -44,15 +56,26 @@ public class UserKeycloakModelMapperImpl implements UserKeycloakModelMapper {
             return null;
         }
 
-        KeycloakSession session = null;
-        RealmModel realm = null;
-        ComponentModel storageProviderModel = null;
-        String username = null;
-        String password = null;
-        boolean enabled = false;
         String firstName = null;
         String lastName = null;
+        boolean enabled = false;
+        String username = null;
+        String password = null;
         Set<Role> roles = null;
+
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        enabled = user.isEnabled();
+        username = user.getUsername();
+        password = user.getPassword();
+        Set<Role> set = user.getRoles();
+        if ( set != null ) {
+            roles = new HashSet<Role>( set );
+        }
+
+        ComponentModel storageProviderModel = null;
+        KeycloakSession session = null;
+        RealmModel realm = null;
 
         UserKeycloakModel userKeycloakModel = new UserKeycloakModel( session, realm, storageProviderModel, username, password, enabled, firstName, lastName, roles );
 

@@ -7,6 +7,7 @@ import org.keycloak.component.ComponentModel;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper
 public interface UserKeycloakModelMapper {
@@ -35,7 +36,37 @@ public interface UserKeycloakModelMapper {
     return userKeycloakModel;
   }
 
+  @Mapping(target = "storageProviderModel", ignore = true)
+  @Mapping(target = "session", ignore = true)
+  @Mapping(target = "serviceAccountClientLink", ignore = true)
+  @Mapping(target = "realm", ignore = true)
+  @Mapping(target = "federationLink", ignore = true)
+  @Mapping(target = "emailVerified", ignore = true)
+  @Mapping(target = "email", ignore = true)
+  @Mapping(target = "createdTimestamp", ignore = true)
+  @Mapping(target = "componentModel", ignore = true)
+  @Mapping(target = "firstName", source = "firstName")
+  @Mapping(target = "lastName", source = "lastName")
+  @Mapping(target = "enabled", source = "enabled")
+  @Mapping(target = "username", source = "username")
+  @Mapping(target = "password", source = "password")
+  @Mapping(target = "roles", source = "roles")
   UserKeycloakModel mapToUserKeycloakModel(Admin admin);
 
+  @Mapping(target = "storageProviderModel", ignore = true)
+  @Mapping(target = "session", ignore = true)
+  @Mapping(target = "serviceAccountClientLink", ignore = true)
+  @Mapping(target = "realm", ignore = true)
+  @Mapping(target = "federationLink", ignore = true)
+  @Mapping(target = "emailVerified", ignore = true)
+  @Mapping(target = "email", ignore = true)
+  @Mapping(target = "createdTimestamp", ignore = true)
+  @Mapping(target = "componentModel", ignore = true)
+  @Mapping(target = "firstName", source = "firstName")
+  @Mapping(target = "lastName", source = "lastName")
+  @Mapping(target = "enabled", source = "enabled")
+  @Mapping(target = "username", source = "username")
+  @Mapping(target = "password", source = "password")
+  @Mapping(target = "roles", source = "roles")
   UserKeycloakModel mapToUserKeycloakModel(User user);
 }
