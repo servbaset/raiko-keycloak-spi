@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'app.raiko'
-version = '0.0.1'
+version = '0.0.2'
 
 configurations {
     compileOnly {
@@ -32,6 +32,7 @@ dependencies {
     compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '15.0.2'
     implementation group: 'org.keycloak', name: 'keycloak-adapter-spi', version: '15.0.2'
     implementation group: 'org.keycloak', name: 'keycloak-core', version: '15.0.2'
+    implementation 'com.zaxxer:HikariCP:5.0.0'
     bundleLib group: 'org.postgresql', name: 'postgresql', version: '42.2.22'
     bundleLib group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'
     implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.5.1'

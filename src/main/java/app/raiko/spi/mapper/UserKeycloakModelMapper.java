@@ -45,6 +45,12 @@ public interface UserKeycloakModelMapper {
   @Mapping(target = "email", ignore = true)
   @Mapping(target = "createdTimestamp", ignore = true)
   @Mapping(target = "componentModel", ignore = true)
+  @Mapping(target = "firstName", source = "admin.firstName")
+  @Mapping(target = "lastName", source = "admin.lastName")
+  @Mapping(target = "enabled", source = "admin.enabled")
+  @Mapping(target = "username", source = "admin.username")
+  @Mapping(target = "password", source = "admin.password")
+  @Mapping(target = "roles", source = "admin.roles")
   UserKeycloakModel mapToUserKeycloakModel(Admin admin);
 
   @Mapping(target = "storageProviderModel", ignore = true)
@@ -56,5 +62,11 @@ public interface UserKeycloakModelMapper {
   @Mapping(target = "email", ignore = true)
   @Mapping(target = "createdTimestamp", ignore = true)
   @Mapping(target = "componentModel", ignore = true)
+  @Mapping(target = "firstName", source = "user.firstName")
+  @Mapping(target = "lastName", source = "user.lastName")
+  @Mapping(target = "enabled", source = "user.enabled")
+  @Mapping(target = "username", source = "user.username")
+  @Mapping(target = "password", source = "user.password")
+  @Mapping(target = "roles", source = "user.roles")
   UserKeycloakModel mapToUserKeycloakModel(User user);
 }
