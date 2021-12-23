@@ -13,7 +13,7 @@ import org.keycloak.models.RealmModel;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-12-23T11:21:04+0330",
+    date = "2021-12-23T11:50:52+0330",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.1.1.jar, environment: Java 11.0.11 (AdoptOpenJDK)"
 )
 public class UserKeycloakModelMapperImpl implements UserKeycloakModelMapper {

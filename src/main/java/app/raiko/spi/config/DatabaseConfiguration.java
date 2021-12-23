@@ -22,6 +22,7 @@ public class DatabaseConfiguration {
     hikariConfig.setJdbcUrl(config.get(CONFIG_KEY_JDBC_URL));
     hikariConfig.setUsername(config.get(CONFIG_KEY_DB_USERNAME));
     hikariConfig.setPassword(config.get(CONFIG_KEY_DB_PASSWORD));
+    hikariConfig.setDriverClassName(config.get(CONFIG_KEY_JDBC_DRIVER));
     hikariConfig.addDataSourceProperty("cachePrepStmts", "true");
     hikariConfig.addDataSourceProperty("prepStmtCacheSize", "250");
     hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
