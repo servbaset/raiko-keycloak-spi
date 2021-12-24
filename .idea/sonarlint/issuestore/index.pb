@@ -15,3 +15,5 @@ Ksrc/main/java/app/raiko/spi/provider/MyHeroDatabaseUserStorageProvider.java,1/
 Qsrc/main/java/app/raiko/spi/factory/MyHeroDatabaseUserStorageProviderFactory.java,6/5/6584479a3082381ab8908a8bf94053b4215c922e
 i
 9src/main/java/app/raiko/spi/service/UserModelService.java,d/4/d4815154768d7120e9a3695fbec9704898c7231e
+\
+,src/main/java/app/raiko/spi/model/Admin.java,d/0/d066e8fda4f47004b09f167161d43e4dbb949166
